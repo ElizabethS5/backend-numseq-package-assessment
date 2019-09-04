@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Calculate the nth Fibonacci number"""
+"""Calculates the nth Fibonacci number"""
 
 import argparse
 
@@ -9,7 +9,7 @@ __author__ = "ElizabethS5"
 
 
 def fib(n):
-    """Calculate the nth Fibonacci number"""
+    """Calculates and returns the nth Fibonacci number."""
     a, b = 0, 1
     num = 0
     while num < n:
@@ -19,7 +19,7 @@ def fib(n):
 
 
 def get_arguments():
-    """returns the arguments form the command line"""
+    """Returns the arguments from the command line"""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'number', help='the nth fibonacci number calulated', type=int)
@@ -27,7 +27,7 @@ def get_arguments():
 
 
 def main():
-    """Prints snd returns the nth fibonacci number"""
+    """Prints and returns the nth fibonacci number"""
     num = get_arguments().number
     print(f"{num}: {fib(num)}")
     return fib(num)

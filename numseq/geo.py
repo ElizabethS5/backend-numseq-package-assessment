@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Calculate the square, tringle, and cube of a number"""
+"""Calculates the square, tringle, and cube of a number."""
 
 import argparse
 
@@ -8,8 +8,23 @@ import argparse
 __author__ = "ElizabethS5"
 
 
+def square(n):
+    """Calculates and returns the square of a number."""
+    return n ** 2
+
+
+def triangle(n):
+    """Calculates and returns the triangle of a number."""
+    return sum(num for num in range(1, n + 1))
+
+
+def cube(n):
+    """Calculates and returns the cubes of a number."""
+    return n ** 3
+
+
 def get_arguments():
-    """returns the arguments form the command line"""
+    """Returns the arguments from the command line."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'number',
@@ -17,23 +32,8 @@ def get_arguments():
     return parser.parse_args()
 
 
-def square(n):
-    """Calculate and return the square of a number"""
-    return n ** 2
-
-
-def triangle(n):
-    """Calculate and return the triangle of a number"""
-    return sum(num for num in range(1, n + 1))
-
-
-def cube(n):
-    """Calculate and return the cubes of a number"""
-    return n ** 3
-
-
 def main():
-    """Prints and returns square, triangle, and cube"""
+    """Prints and returns square, triangle, and cube."""
     num = get_arguments().number
     print(f"{num}: {square(num)} {triangle(num)} {cube(num)}")
     return (square(num), triangle(num), cube(num))
